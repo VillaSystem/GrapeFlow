@@ -1,17 +1,6 @@
 {
   "clients": [
     {
-      "id": "3",
-      "nombre": "Eduardo",
-      "apellido": "Rodriguez",
-      "telefono": "999 999 999",
-      "direccion": "San Felipe",
-      "pais": "Perú",
-      "ciudad": "Lima",
-      "dni": "87654321",
-      "correo": "eduardo.rodriguez@example.com"
-    },
-    {
       "id": "4",
       "nombre": "Ana",
       "apellido": "Fernández",
@@ -20,23 +9,15 @@
       "pais": "Perú",
       "ciudad": "Lima",
       "dni": "12345678",
-      "correo": "ana.fernandez@example.com"
-    },
-    {
-      "id": "5",
-      "nombre": "Carlos",
-      "apellido": "García",
-      "telefono": "999 888 777",
-      "direccion": "Las Condes",
-      "pais": "Perú",
-      "ciudad": "Lima",
-      "dni": "23456789",
-      "correo": "carlos.garcia@example.com"
+      "correo": "ana.fernandez@example.com",
+      "password": "12345678",
+      "confirmPassword": "12345678",
+      "role": "consumer"
     }
   ],
   "inventory": [
     {
-      "nombre": "Barriles de Robl",
+      "nombre": "Barriles de Roble",
       "tipo": "Equipamiento",
       "unidad": "und",
       "caducidad": "N/A",
@@ -44,7 +25,8 @@
       "costoU": 250,
       "ultimaActualizacion": "2024-09-03",
       "cantidad": 30,
-      "id": "e578"
+      "id": "e578",
+      "producer_id": "6"
     },
     {
       "nombre": "Botellas de Vidrio",
@@ -55,7 +37,8 @@
       "costoU": 0.75,
       "ultimaActualizacion": "2024-09-02",
       "cantidad": 2000,
-      "id": "92a7"
+      "id": "92a7",
+      "producer_id": "8"
     },
     {
       "nombre": "Azúcar Refinada",
@@ -66,167 +49,222 @@
       "costoU": 1.8,
       "ultimaActualizacion": "2024-09-04",
       "cantidad": 100,
-      "id": "6d57"
+      "id": "6d57",
+      "producer_id": "6"
     }
   ],
-  "lotes":
-  [
+  "lotes": [
     {
       "id": "1",
-      "lote": 1,
+      "numeroLote": "L001",
       "uva": "Uva Tinta",
       "fechaInicio": "11/08/2024",
       "cantidadLitros": 300,
       "pH": 3.5,
       "temperatura": 18,
-      "estadoProceso": "En Proceso"
+      "estadoProceso": "En Proceso",
+      "producer_id": "6"
     },
     {
       "id": "2",
-      "lote": 2,
+      "numeroLote": "L002",
       "uva": "Uva Blanca",
       "fechaInicio": "04/08/2024",
       "cantidadLitros": 250,
       "pH": 3.6,
       "temperatura": 20,
-      "estadoProceso": "Terminado"
+      "estadoProceso": "Terminado",
+      "producer_id": "8"
     },
     {
       "id": "3",
-      "lote": 3,
+      "numeroLote": "L003",
       "uva": "Uva Cabernet",
       "fechaInicio": "06/07/2024",
       "cantidadLitros": 400,
       "pH": 3.4,
       "temperatura": 17,
-      "estadoProceso": "En Proceso"
+      "estadoProceso": "En Proceso",
+      "producer_id": "6"
+    },
+    {
+      "id": "10",
+      "numeroLote": "L003",
+      "uva": "uva",
+      "fechaInicio": "2020-10-20",
+      "cantidadLitros": 5,
+      "pH": 5,
+      "temperatura": 5,
+      "estadoProceso": "En Proceso",
+      "producer_id": "8"
     }
   ],
   "orders": [
     {
-      "id": "1",
-      "numeroPedido": "P001",
-      "fecha": "01/09/2024",
-      "tipo": "vino",
-      "estado": "En Proceso"
-    },
-    {
       "id": "2",
       "numeroPedido": "P002",
-      "nombre": "Maria Fernandez",
-      "nombreProductor": "Carlos Fernandez",
-      "correoProductor": "carlosf@vinosdelsur.com",
-      "correo": "maria.fernandez@cervezasdelnorte.com",
       "productos": [
         "Cerveza Artesanal Rubia - 500 ml - 6 unidades",
         "Cerveza Artesanal Negra - 500 ml - 4 unidades"
       ],
       "condicionTransporte": "Recolección en Tienda",
       "metodoPago": "Tarjeta de Débito",
-      "telefonoProductor": "+51 912 345 678",
-      "telefono": "+51 942 876 123",
       "terminosPago": "Pago Contado",
       "fecha": "02/09/2024",
       "fechaEntrega": "03/09/2024",
-      "tipo": "vino",
-      "estado": "Terminado"
+      "tipo": "cerveza",
+      "estado": "En Proceso",
+      "producer_id": "6",
+      "consumer_id": "4"
     },
     {
       "id": "3",
       "numeroPedido": "P003",
-      "nombre": "Pedro Martinez",
-      "nombreProductor": "Laura Torres",
-      "correoProductor": "lauratorres@vinosdelsur.com",
-      "correo": "pedro.martinez@licoresdelmundo.pe",
       "productos": [
         "Whisky Escocés 12 Años - 750 ml - 1 botella",
         "Vodka Ruso - 750 ml - 1 botella"
       ],
       "condicionTransporte": "Transporte Regular",
       "metodoPago": "Yape",
-      "telefono": "+51 910 345 678",
-      "telefonoProductor": "+51 998 765 432",
       "terminosPago": "Pago Contado",
       "fecha": "03/09/2024",
+      "fechaEntrega": "10/09/2024",
       "tipo": "vino",
-      "estado": "Enviado"
+      "estado": "Enviado",
+      "producer_id": "8",
+      "consumer_id": "5"
     },
     {
       "id": "4",
       "numeroPedido": "P004",
-      "nombre": "Ana Lopez",
-      "nombreProductor": "Juan Perez",
-      "correoProductor": "juanperez@vinosdelsur.com",
-      "correo": "ana.lopez@vinosdelpacifico.cl",
       "productos": [
         "Vino Tinto Chileno Reserva - 750 ml - 3 botellas",
         "Queso Parmesano - 200 g - 1 unidad"
       ],
       "condicionTransporte": "Transporte con temperatura controlada",
       "metodoPago": "Pago Contraentrega",
-      "telefonoProductor": "+51 923 456 789",
-      "telefono": "+56 9 8765 4321",
       "terminosPago": "Pago Contado",
       "fecha": "04/09/2024",
       "fechaEntrega": "12/09/2024",
-      "tipo": "vino",
-      "estado": "En Proceso"
+      "tipo": "mixto",
+      "estado": "En Proceso",
+      "producer_id": "6",
+      "consumer_id": "7"
+    },
+    {
+      "id": "5",
+      "numeroPedido": "P005",
+      "productos": [
+        "Gin Argentino London Dry - 750 ml - 2 botellas",
+        "Tónica Premium - 330 ml - 6 unidades"
+      ],
+      "condicionTransporte": "Transporte Regular",
+      "metodoPago": "Mercado Pago",
+      "terminosPago": "Pago Contado",
+      "fecha": "05/09/2024",
+      "fechaEntrega": "17/09/2024",
+      "tipo": "licores",
+      "estado": "En Proceso",
+      "producer_id": "8",
+      "consumer_id": "4"
     }
   ],
   "wines": [
     {
-      "id": "4",
-      "nombre": "Vino Tinto Reserva - Valle del Maule",
-      "descripcion": "Un vino tinto intenso con aromas a ciruelas y un toque de vainilla.",
-      "tipo": "Vino Tinto",
-      "region": "Valle del Maule",
-      "pais": "Chile",
-      "anio": 2020,
-      "uvas": ["Carmenere", "Syrah"],
-      "alcohol": 14.0,
-      "certificacion": "D.O. Valle del Maule",
-      "calificacion": 5,
-      "estado": "Disponible",
-      "productor_id": "PROD004",
-      "lote_id": "L004",
-      "lote": "1"
-
-    },
-    {
-      "id": "5",
+      "id": "1",
       "nombre": "Vino Blanco Sauvignon Blanc - Valle de Leyda",
       "descripcion": "Vino fresco y vibrante con notas herbáceas y cítricas.",
-      "tipo": "Vino Blanco",
+      "tipo": "Vino Blanc",
       "region": "Valle de Leyda",
       "pais": "Chile",
       "anio": 2022,
-      "uvas": ["Sauvignon Blanc"],
-      "alcohol": 13.0,
-      "certificacion": "D.O. Leyda",
+      "uvas": [
+        "Sauvignon Blanc"
+      ],
+      "alcohol": 13,
+      "certificacion": 2,
       "calificacion": 4,
       "estado": "Disponible",
-      "productor_id": "PROD005",
-      "lote_id": "L005",
-      "lote": "2"
-
+      "producer_id": "6",
+      "lote_id": "11",
+      "lote": "2",
+      "link": "https://lacasadelbarman.pe/wp-content/uploads/2022/08/vino-blanco-leyda.jpg"
     },
     {
-      "id": "6",
+      "id": "2",
       "nombre": "Vino Tinto Malbec - Mendoza",
       "descripcion": "Concentrado y afrutado, ideal para acompañar carnes rojas.",
       "tipo": "Vino Tinto",
       "region": "Mendoza",
       "pais": "Argentina",
       "anio": 2023,
-      "uvas": ["Malbec"],
+      "uvas": [
+        "Malbec"
+      ],
       "alcohol": 12.5,
       "certificacion": "I.G. Mendoza",
       "calificacion": 4,
       "estado": "Disponible",
-      "productor_id": "PROD006",
-      "lote_id": "L006",
-      "lote": "3"
-
+      "producer_id": "8",
+      "lote_id": "10",
+      "link": "https://www.infinitybrands.pe/wp-content/uploads/2019/07/LA-IRIDE-ROSE-SEMI-SWEET-2024.jpg"
+    },
+    {
+      "id": "3",
+      "nombre": "Vino Blanco Sauvignon Blanc - Valle Central",
+      "descripcion": "Vino fresco con notas de cítricos y manzana verde.",
+      "tipo": "Vino Blanco",
+      "region": "Valle Central",
+      "pais": "Chile",
+      "anio": 2020,
+      "uvas": [
+        "Sauvignon Blanc"
+      ],
+      "alcohol": 12.8,
+      "certificacion": "D.O. Valle Central",
+      "calificacion": 4,
+      "estado": "Disponible",
+      "producer_id": "6",
+      "lote_id": "10",
+      "link": "https://metroio.vtexassets.com/arquivos/ids/418795-1200-auto?v=638279378601570000&width=1200&height=auto&aspect=true"
+    },
+    {
+      "id": "4",
+      "nombre": "Vino  Tinto Cabernet Sauvignon - Napa Valley",
+      "descripcion": "Vino estructurado con aromas a ciruela, moras y un toque de madera.",
+      "tipo": "Vino Tinto",
+      "region": "Napa Valley",
+      "pais": "Estados Unidos",
+      "anio": 2018,
+      "uvas": [
+        "Cabernet Sauvignon"
+      ],
+      "alcohol": 14,
+      "certificacion": "Napa Valley AVA",
+      "calificacion": 5,
+      "estado": "Disponible",
+      "producer_id": "8",
+      "lote_id": "3",
+      "link": "https://lacanasteria.com/wp-content/uploads/2024/06/caymusweb.jpg"
+    },
+    {
+      "id": "5",
+      "nombre": "Vino Rosado Garnacha - Campo de Borja",
+      "descripcion": "Vino ligero con aromas a frutas rojas y flores silvestres.",
+      "tipo": "Vino Rosado",
+      "region": "Campo de Borja",
+      "pais": "España",
+      "anio": 2022,
+      "uvas": [
+        "Garnacha"
+      ],
+      "alcohol": 13,
+      "certificacion": "D.O. Campo de Borja",
+      "calificacion": 4,
+      "estado": "Disponible",
+      "producer_id": "6",
+      "lote_id": "10",
+      "link": "https://chapeauwines.es/wp-content/uploads/2022/10/PRADOS-ROSADO-600x600.jpg"
     }
-   ]
+  ]
 }
